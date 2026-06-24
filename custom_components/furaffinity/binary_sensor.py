@@ -52,14 +52,7 @@ BINARY_SENSOR_DESCRIPTIONS: tuple[FABinarySensorEntityDescription, ...] = (
         name="Operational",
         device_class=BinarySensorDeviceClass.RUNNING,
         icon="mdi:check-circle",
-    ),
-    FABinarySensorEntityDescription(
-        key="all_monitors_up",
-        translation_key="all_monitors_up",
-        name="All monitors up",
-        device_class=BinarySensorDeviceClass.RUNNING,
-        icon="mdi:server",
-    ),
+    )
 )
 
 
@@ -109,22 +102,16 @@ class FurAffinityStatusBinarySensor(
             return None
 
         if self.entity_description.key == "has_alerts":
-            return bool(self.coordinator.data.get("active_alerts"))
+            return len(self.coordinator.data.get("active_alerts") or []) > 0
 
         if self.entity_description.key == "has_incidents":
-            return bool(self.coordinator.data.get("active_incidents"))
+            return len(self.coordinator.data.get("active_incidents") or []) > 0
 
         if self.entity_description.key == "has_maintenance":
-            return bool(self.coordinator.data.get("active_maintenance"))
+            return len(self.coordinator.data.get("active_maintenance") or []) > 0
 
         if self.entity_description.key == "is_up":
             return self.coordinator.data.get("overall_status") == "up"
-
-        if self.entity_description.key == "all_monitors_up":
-            monitors: list[dict[str, Any]] = self.coordinator.data.get("monitors", [])
-            if not monitors:
-                return None
-            return all(m.get("status") == "up" for m in monitors)
 
         return None
 

@@ -73,7 +73,6 @@ For each installation, the integration creates the following device **Fur Affini
 | `binary_sensor.fur_affinity_status_has_incidents` | `ON` when at least one incident is active. |
 | `binary_sensor.fur_affinity_status_has_maintenance` | `ON` when at least one maintenance is active. |
 | `binary_sensor.fur_affinity_status_operational` | `ON` when `overall_status` is `up`. |
-| `binary_sensor.fur_affinity_status_all_monitors_up` | `ON` when every monitor is reporting `up`. |
 
 ## Example automations
 

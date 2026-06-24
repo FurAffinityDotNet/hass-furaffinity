@@ -45,8 +45,7 @@
       "has_alerts": { "name": "Has alerts" },
       "has_incidents": { "name": "Has incidents" },
       "has_maintenance": { "name": "Has maintenance" },
-      "is_up": { "name": "Operational" },
-      "all_monitors_up": { "name": "All monitors up" }
+      "is_up": { "name": "Operational" }
     }
   }
 }
