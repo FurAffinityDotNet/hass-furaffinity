@@ -1,0 +1,52 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Fur Affinity Status",
+        "description": "Set up Fur Affinity Status to monitor alerts, incidents, maintenance, and monitor statuses.",
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance of Fur Affinity Status is allowed.",
+      "cannot_connect": "Failed to connect to the Fur Affinity status API.",
+      "unknown": "An unexpected error occurred."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "overall_status": {
+        "name": "Overall status",
+        "state": {
+          "up": "Operational",
+          "down": "Down",
+          "paused": "Paused"
+        }
+      },
+      "active_alerts": { "name": "Active alerts" },
+      "active_incidents": { "name": "Active incidents" },
+      "active_maintenance": { "name": "Active maintenance" },
+      "uptime_24h": { "name": "Overall uptime (24h)" },
+      "uptime_72h": { "name": "Overall uptime (72h)" },
+      "uptime_7d": { "name": "Overall uptime (7d)" }
+    },
+    "binary_sensor": {
+      "has_alerts": { "name": "Has alerts" },
+      "has_incidents": { "name": "Has incidents" },
+      "has_maintenance": { "name": "Has maintenance" },
+      "is_up": { "name": "Operational" },
+      "all_monitors_up": { "name": "All monitors up" }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "domain": "furaffinity",
+  "name": "Fur Affinity Status",
+  "version": "1.0.0",
+  "documentation": "https://github.com/FurAffinityDotNet/hass-furaffinity",
+  "issue_tracker": "https://github.com/FurAffinityDotNet/hass-furaffinity/issues",
+  "codeowners": ["@resba"],
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "integration_type": "service",
+  "requirements": [],
+  "dependencies": []
+}

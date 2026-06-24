@@ -1,0 +1,27 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Fur Affinity Status",
+        "description": "Set up Fur Affinity Status to monitor alerts, incidents, maintenance, and monitor statuses.",
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance of Fur Affinity Status is allowed.",
+      "cannot_connect": "Failed to connect to the Fur Affinity status API.",
+      "unknown": "An unexpected error occurred."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Scan interval (minutes)"
+        }
+      }
+    }
+  }
+}
